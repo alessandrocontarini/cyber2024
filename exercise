@@ -1,1 +1,32 @@
 Exercises CyberSecurity 2024 (15/11/2024)
+
+note:
+
+stringa="ciao"
+stringa_bytes=stringa.encode('ascii') => trasformo in bytes secondo la codifica ascii
+bytes_stringa= stringa_bytes.decode('ascii') =>converto un oggetto bytes in una stringa
+
+#se faccio solamente .encode() tipicamente si intende la 'utf-8'
+
+La decodifica Base64 può essere applicata su dati codificati in Base64, che sono generalmente 
+rappresentati come una stringa di caratteri ASCII
+
+# Esempio di stringa codificata in Base64 
+base64_message = "U28gbG9uZyBhbmQgb25seSBtYW5kYXMgbW9yZSBpbXBhY3RmdWwgZnVuY3Rpb25zLg=="
+# Decodifica Base64
+decoded_bytes = base64.b64decode(base64_message)
+# Se i dati originali erano testo (come nel nostro esempio), decodifichiamo i byte in una stringa leggibile
+decoded_message = decoded_bytes.decode('utf-8')
+
+
+message = ""
+for c in binary_string.split(" "):
+    message += (chr(int(c, 2)))
+
+//----se non ho spazi----
+# Splitta la stringa ogni 8 bit
+for i in range(0, len(binary_string), 8):
+    byte = binary_string[i:i+8]  # prendi un blocco di 8 bit
+    message += chr(int(byte, 2))  # convertilo in decimale e poi in carattere
+
+print(message)
