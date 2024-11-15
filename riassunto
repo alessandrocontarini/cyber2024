@@ -67,6 +67,24 @@ di tipo bytes o un bytearray. Se hai una stringa (tipo str), dovrai prima conver
 
 //----------------------------------------------------------
 BIN TO DEC
+//-----se devo splittare dati spazi o altri valori-------------------
+message = ""
+for c in binary_string.split(" "):
+    message += (chr(int(c, 2)))
+
+//----se non ho spazi e devo splittare dopo tot valori!!!!!-------
+# Splitta la stringa ogni 8 bit
+for i in range(0, len(binary_string), 8):   #la i itera di 8
+    byte = binary_string[i:i+8]  # prendi un blocco di 8 bit
+    message += chr(int(byte, 2))  # convertilo in decimale e poi in carattere
+
+print(message)
+
+//--------------------
+str_bin="0101010101010101010101010"
+n = int("0101010101010101010101010", 2)
+n.to_bytes((n.bit_length() + 7) // 8, 'big').decode()
+quest'ultimo funziona solo se la stringa binaria è multipla di 8
 
 
 
