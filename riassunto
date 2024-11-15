@@ -90,3 +90,10 @@ Ricorda crackstation.net per gli sha256 o md5
 Proprietà dello XOR
 Ultima riga generalmente contiene spritz, flag, ....
 
+nei web
+1)sql injection => 'OR 1=1; --
+2)cookies
+3)debugger
+4)curl se php
+5)activate
+
