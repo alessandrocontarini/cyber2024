@@ -1,0 +1,72 @@
+UTF-8
+# Codifica in UTF-8
+stringa = "Café"
+byte_stringa = stringa.encode('utf-8')
+print(byte_stringa)  # b'Caf\xc3\xa9'
+
+# Decodifica
+decoded_string = byte_stringa.decode('utf-8')
+print(decoded_string)  # "Café"
+
+//-------------------------------------------------------------
+Base64
+import base64
+
+# Codifica in Base64
+message = "Hello, World!"
+b64_message = base64.b64encode(message.encode('utf-8')) #codifico in base64 un oggetto di tipo bytes
+print(b64_message)  # b'SGVsbG8sIFdvcmxkIQ=='
+
+# Decodifica
+decoded_message = base64.b64decode(b64_message).decode('utf-8') #decodifico da base64 un oggetto di tipo bytes =>decode=>stringa
+print(decoded_message)  # "Hello, World!"
+
+//-------------------------------------------------------------
+HEX
+# Codifica in Hex
+message = "Hello"
+hex_message = message.encode('utf-8').hex()
+print(hex_message)  # '48656c6c6f'
+
+# Decodifica
+decoded_message = bytes.fromhex(hex_message).decode('utf-8')
+print(decoded_message)  # "Hello"
+
+//----------------------------------------------------------
+URL
+import urllib.parse
+
+# Codifica URL
+url = "Hello World!"
+encoded_url = urllib.parse.quote(url)
+print(encoded_url)  # 'Hello%20World%21'
+
+# Decodifica URL
+decoded_url = urllib.parse.unquote(encoded_url)
+print(decoded_url)  # "Hello World!"
+
+//------------------------------------------------------------
+BASE32
+
+import base64
+
+# Dati da codificare
+message = "Hello, World!"
+
+# Codifica in Base32
+b32_message = base64.b32encode(message.encode('utf-8'))
+print(b32_message)  # b'JBSWY3DPEB3W64TMMQ=='
+
+# Decodifica da Base32
+decoded_message = base64.b32decode(b32_message).decode('utf-8')
+print(decoded_message)  # "Hello, World!"
+
+NOTA:
+In Python 3, la funzione base64.b64decode() richiede che il dato da decodificare sia un oggetto 
+di tipo bytes o un bytearray. Se hai una stringa (tipo str), dovrai prima convertirla in bytes.
+
+//----------------------------------------------------------
+BIN TO DEC
+
+
+
