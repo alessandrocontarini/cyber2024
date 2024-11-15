@@ -86,5 +86,7 @@ n = int("0101010101010101010101010", 2)
 n.to_bytes((n.bit_length() + 7) // 8, 'big').decode()
 quest'ultimo funziona solo se la stringa binaria è multipla di 8
 
-
+Ricorda crackstation.net per gli sha256 o md5
+Proprietà dello XOR
+Ultima riga generalmente contiene spritz, flag, ....
 
